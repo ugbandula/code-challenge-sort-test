@@ -1,0 +1,22 @@
+{
+    "name": "sort-test",
+    "version": "1.0.0",
+    "description": "Object array sorting test",
+    "main": "app.js",
+    "scripts": {
+        "start": "node ./app/app.js",
+        "test": "test"
+    },
+    "keywords": [
+        "nodejs",
+        "testing"
+    ],
+    "author": "Bandula Gamage",
+    "license": "ISC",
+    "dependencies": {
+        "dotenv": "^8.0.0",
+        "express": "^4.17.1",
+        "figlet": "^1.2.3",
+        "request": "^2.88.0"
+    }
+}
