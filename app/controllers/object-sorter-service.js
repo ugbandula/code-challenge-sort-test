@@ -55,24 +55,40 @@ function processObjects(data) {
          * Separate records based on the gender
          */
         data.forEach((record, index) => {
-            if (commonUtils.isGenderMale(record)) {
-                filteredObjects.male.push(record.name);
-            } else {
-                filteredObjects.female.push(record.name);
-            }
+            processPetRecordsForEachPerson(record.gender, record);
         });
 
         /**
          * Sorts the final data collections
          */
-        filteredObjects.male    = filteredObjects.male.sort(commonUtils.sort);
-        filteredObjects.female  = filteredObjects.female.sort(commonUtils.sort);
+        filteredObjects.male    = commonUtils.sortArray(filteredObjects.male);
+        filteredObjects.female  = commonUtils.sortArray(filteredObjects.female);
 
         console.log('Generated Output');
         console.log('________________');
         console.log('');
-        // console.log(filteredObjects);
 
         commonUtils.displayElements(filteredObjects);
 	}
+}
+
+/**
+ * Processes pets arrays under each person
+ * @param gender    Gender type
+ * @param record    Pet records
+ */
+function processPetRecordsForEachPerson(gender, record) {
+    if (!record.pets)
+        return;
+
+    record.pets.forEach((pet, index) => {
+        if (commonUtils.isPetTypeCat(pet.type)) {
+            if (commonUtils.isGenderFemale(gender)) {
+                filteredObjects.female.push(pet.name);
+            } else {
+                filteredObjects.male.push(pet.name);
+            }
+        }
+    });
+
 }

@@ -1,40 +1,29 @@
 ///////////////////////////////////////////////////////////////
+// Module Dependencies
+///////////////////////////////////////////////////////////////
+let _           = require('underscore');
+let constants   = require('../utils/constants');
+
+///////////////////////////////////////////////////////////////
 // 	Exposed Methods
 ///////////////////////////////////////////////////////////////
 module.exports = {
     /**
-     * Checks whether the given record is a gender type of Male
-     * @param record        Record
+     * Checks whether the given record is a gender type of Female
+     * @param gender        Gender type
      * @returns {*|boolean} Status
-     *
-     * Format of the record
-     * {
-     *      "name": "Bob",
-     *      "gender": "Male",
-     *      "age": 23,
-     *      "pets": [
-     *          {
-     *              "name": "Garfield",
-     *              "type": "Cat"
-     *          },
-     *          {
-     *              "name": "Fido",
-     *              "type": "Dog"
-     *          }
-     *      ]
-     *  }
      */
-    isGenderMaleOwner: function(record) {
-        return (record && (record.gender === 'Male'));
+    isGenderFemale: function(gender) {
+        return (gender && (gender === constants.gender.FEMALE));
     },
 
     /**
      * Checks whether the given record is a gender type of Female
-     * @param record        Record
+     * @param type          Pet type
      * @returns {*|boolean} Status
      */
-    isGenderFemaleOwner: function(record) {
-        return (record && (record.gender === 'Female'));
+    isPetTypeCat: function(type) {
+        return (type && (type === constants.petType.CAT));
     },
 
     /**
@@ -49,6 +38,18 @@ module.exports = {
         if (a > b)
             return 1;
         return 0;
+    },
+
+    /**
+     * Sorts elements in ascending order by comparing the given attributes
+     * @param array Array of objects
+     * @returns []  Resulted Array
+     */
+    sortArray: function(array) {
+        if (array)
+            return array.sort(this.sort);
+        else
+            return null;
     },
 
     /**

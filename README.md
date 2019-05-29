@@ -28,19 +28,5 @@ npm start
 # to run test suites
 npm test
 
-# to create build
-npm run build
-
-# to run test cases in watch mode
-npm run tdd
 ```
-
-## Tools used
-
-This project is written using the following tools:
-
-- JavaScript [`ES2015`](https://babeljs.io/learn-es2015/) version
-- [`Mocha JS`](https://mochajs.org/) testing framework.
-- [`Chai JS`](http://chaijs.com/) as the assertion library
-- [`Istanbul JS`](https://istanbul.js.org/) as the code coverage library
 
