@@ -48,7 +48,7 @@ figlet.text(logoText, function(error, data) {
 		console.log('*     Released Date: ' + process.env.RELEASED_DATE + '                   ');
 		console.log('*     Version: ' + process.env.VERSION + '                          ');
 		console.log('*                                                 ');
-		// console.log(data);
+		console.log(data);
 		console.log("----------------------------------------------------------------------------------------");
 	}
 });
